@@ -172,3 +172,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+
+NIN_VERIFICATION_URL = os.getenv('NIN_VERIFICATION_URL', default='')
+BVN_VERIFICATION_URL = os.getenv('BVN_VERIFICATION_URL', default='')
+NIN_API_KEY = os.getenv('NIN_API_KEY', default='')
+BVN_API_KEY = os.getenv('BVN_API_KEY', default='')
+USE_MOCK_VERIFICATION = os.getenv('USE_MOCK_VERIFICATION', default=True, cast=bool)
