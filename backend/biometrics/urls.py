@@ -22,5 +22,4 @@ urlpatterns = [
     
     # Cross-platform endpoints
     path('cross-platform/verify/', views.CrossPlatformVerificationView.as_view(), name='cross-platform-verify'),
-    path('cross-platform/profile/', views.CrossPlatformProfileView.as_view(), name='cross-platform-profile'),
 ]
