@@ -6,6 +6,4 @@ class VerificationConfig(AppConfig):
     name = 'verification'
     verbose_name = 'Identity Verification'
     
-    def ready(self):
-        import verification.signals
 

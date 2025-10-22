@@ -7,7 +7,7 @@ from django.utils import timezone
 import json
 import logging
 
-from tasks import process_facial_verification
+from .tasks import process_facial_verification
 
 from .models import IDVerification, FacialVerification, GovernmentVerificationLog
 from .serializers import (
@@ -15,7 +15,7 @@ from .serializers import (
     VerificationRequestSerializer, FacialVerificationRequestSerializer,
     VerificationResultSerializer
 )
-from .services.ocr_service import OCRService
+
 from .services.facial_service_simple import SimpleFacialService
 from .services.gov_api_service import GovernmentAPIService
 

@@ -3,8 +3,7 @@ from django.utils import timezone
 import logging
 
 from .models import IDVerification, FacialVerification
-from .services.ocr_service import OCRService
-from .services.facial_service import FacialRecognitionService
+
 from .services.gov_api_service import GovernmentAPIService
 
 logger = logging.getLogger(__name__)
@@ -17,7 +16,7 @@ def process_id_verification(verification_id):
         verification.mark_processing()
         
         # Step 1: OCR Processing
-        ocr_service = OCRService()
+        ocr_service = None
         ocr_result = ocr_service.process_id_document(
             verification.id_image_front.path,
             verification.id_type
@@ -90,7 +89,7 @@ def process_facial_verification(facial_verification_id):
     try:
         facial_verification = FacialVerification.objects.get(id=facial_verification_id)
         
-        facial_service = FacialRecognitionService()
+        facial_service = None
         
         # Step 1: Liveness Detection
         is_live, liveness_score, liveness_details = facial_service.verify_liveness(
