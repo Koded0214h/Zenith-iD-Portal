@@ -32,4 +32,6 @@ urlpatterns = [
     path('api/auth/', include("users.urls")),
     path('api/verification/', include("verification.urls")),
     path("api/biometrics/", include("biometrics.urls")),
+    path("api/accounts/", include("accountz.urls")),
+    path('api/analytics/', include('apps.analytics.urls')),
 ]
